@@ -1,0 +1,38 @@
+{
+	"name": "generator-browser-module",
+	"version": "1.0.0",
+	"description": "Yeoman generator for browser modules",
+	"main": "index.js",
+	"scripts": {
+		"test": "ava"
+	},
+	"files": [
+		"generators"
+	],
+	"keywords": [
+		"yeoman-generator",
+		"yeoman",
+		"generator",
+		"browser",
+		"module",
+		"web",
+		"plugin",
+		"scaffold",
+		"boilerplate",
+		"template"
+	],
+	"author": "Brian Hann",
+	"license": "MIT",
+	"dependencies": {
+		"eslint": "^4.19.0",
+		"humanize-url": "^1.0.1",
+		"is-scoped": "^1.0.0",
+		"normalize-url": "^2.0.1",
+		"underscore.string": "^3.3.4",
+		"yeoman-generator": "^2.0.3"
+	},
+	"devDependencies": {
+		"eslint-config-airbnb-base": "^12.1.0",
+		"eslint-plugin-import": "^2.9.0"
+	}
+}
