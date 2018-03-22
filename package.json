@@ -1,6 +1,6 @@
 {
 	"name": "generator-browser-widget",
-	"version": "0.0.0",
+	"version": "1.0.1",
 	"description": "Yeoman generator for browser widgets",
 	"main": "index.js",
 	"scripts": {},
