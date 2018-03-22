@@ -1,6 +1,6 @@
-# generator-browser-module
+# generator-browser-widget
 
-> Scaffold out a browser module
+> Scaffold out a browser widget
 
 Inspiration from Sindre's [generator-nm](https://github.com/sindresorhus/generator-nm)
 
