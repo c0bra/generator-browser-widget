@@ -14,11 +14,23 @@ Inspiration from Sindre's [generator-nm](https://github.com/sindresorhus/generat
 
 # Install
 
-	$ npm install --global yo generator-browser-module
+    $ npm install --global yo generator-browser-module
 
 # Usage
 
-	$ yo browser-module
+Scaffold your module with the generator:
+
+    $ yo browser-module
+
+Run the local development server. Your browser and cypress will open up.
+
+    $ npm run dev
+
+Other npm scripts
+
+    $ npm run build
+    $ npm run test # test with jest
+    $ npm run e2e # run cypress e2e tests
 
 # License
 

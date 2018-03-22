@@ -36,6 +36,7 @@
     "wait-on": "^2.1.0"
   }<% if (coverage) { %>,
   "jest": {
-    "collectCoverage": true
+    "collectCoverage": true,
+    "coverageReporters":  ["json", "lcov", "text", "html"]
   }<% } %>
 }
