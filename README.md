@@ -20,7 +20,7 @@ Inspiration from Sindre's [generator-nm](https://github.com/sindresorhus/generat
 
 Scaffold your module with the generator:
 
-    $ yo browser-module
+    $ yo browser-widget
 
 Run the local development server. Your browser and cypress will open up.
 
