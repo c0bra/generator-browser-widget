@@ -14,7 +14,7 @@ Inspiration from Sindre's [generator-nm](https://github.com/sindresorhus/generat
 
 # Install
 
-    $ npm install --global yo generator-browser-module
+    $ npm install --global yo generator-browser-widget
 
 # Usage
 
