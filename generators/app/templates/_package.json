@@ -23,14 +23,18 @@
     "serve": "live-server",
     "test": "npm run build && jest"
   },
-  "devDependencies": {
+  "devDependencies": {<% if (babel) { %>
+    "babel-core": "^6.26.3",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.7.0",<% } %>
     "concurrently": "^3.5.1",<% if (coveralls) { %>
     "coveralls": "^3.0.0",<% } %>
     "cypress": "^2.1.0",
     "get-port-cli": "1.1.0",
     "jest": "22.4.3",
     "live-server": "^1.2.0",
-    "rollup": "^0.57.1",
+    "rollup": "^0.57.1",<% if (babel) { %>
+    "rollup-plugin-babel": "3.0.4",<% } %>
     "rollup-plugin-commonjs": "^9.1.0",
     "rollup-plugin-node-resolve": "^3.3.0",
     "wait-on": "^2.1.0"
@@ -38,5 +42,9 @@
   "jest": {
     "collectCoverage": true,
     "coverageReporters":  ["json", "lcov", "text", "html"]
-  }<% } %>
+  }<% } %><% if (babel) { %>,
+  "browserslist": [
+    "last 2 versions",
+    "IE 10"
+  ]<% } %>
 }
