@@ -36,7 +36,11 @@
     "rollup": "^0.57.1",<% if (babel) { %>
     "rollup-plugin-babel": "3.0.4",<% } %>
     "rollup-plugin-commonjs": "^9.1.0",
-    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-node-resolve": "^3.3.0",<% if (postcss) { %>
+    "rollup-plugin-postcss": "^1.6.1",
+    "postcss-nested": "^3.0.0",
+    "postcss-simple-vars": "^4.1.0",
+    "cssnano": "^3.10.0",<% } %>
     "wait-on": "^2.1.0"
   }<% if (coverage) { %>,
   "jest": {

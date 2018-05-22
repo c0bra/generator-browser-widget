@@ -8,6 +8,7 @@ Inspiration from Sindre's [generator-nm](https://github.com/sindresorhus/generat
 
 * Build & bundle with [rollup](https://github.com/rollup/rollup)
 * Transpile with [babel](https://babeljs.io)
+* Handle your CSS with [PostCSS](postcss)
 * Unit test with [jest](https://facebook.github.io/jest/)
 * E2E test in the browser with [cypress.io](https://www.cypress.io/) (Useful for testing widgets and visual components, but JS code can be tested too)
 * Publish code coverage to [coveralls.io](https://coveralls.io)

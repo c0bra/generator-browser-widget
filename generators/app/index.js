@@ -67,7 +67,13 @@ module.exports = class extends Generator {
       },
       {
         name: 'babel',
-        message: 'Will you transpile with babel?',
+        message: 'Will you use babel?',
+        type: 'confirm',
+        default: false
+      },
+      {
+        name: 'postcss',
+        message: 'Do you want to use PostCSS?',
         type: 'confirm',
         default: false
       },
@@ -102,6 +108,7 @@ module.exports = class extends Generator {
 
       const tpl = {
         babel: props.babel,
+        postcss: props.postcss,
         moduleName: props.moduleName,
         moduleDescription: props.moduleDescription,
         camelModuleName: s.camelize(repoName),
@@ -130,6 +137,8 @@ module.exports = class extends Generator {
       mv('gitignore', '.gitignore');
       mv('travis.yml', '.travis.yml');
       mv('_package.json', 'package.json');
+
+      if (!props.postcss) this.fs.delete('main.css');
     });
   }
 
