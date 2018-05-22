@@ -1,6 +1,10 @@
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';<% if (babel) { %>
-import babel from 'rollup-plugin-babel';<% } %>
+import babel from 'rollup-plugin-babel';<% } %><% if (postcss) { %>
+import postcss from 'rollup-plugin-postcss';
+import cssnano from 'cssnano';
+import nested from 'postcss-nested';
+import simplevars from 'postcss-simple-vars';<% } %>
 import pkg from './package.json';
 
 export default [
@@ -30,6 +34,13 @@ export default [
         exclude: 'node_modules/**',
         presets: [ [ 'env', { modules: false } ] ],
         plugins: [ 'external-helpers' ]
+      }),<% } %><% if (postcss) { %>
+      postcss({
+        plugins: [
+          nested(),
+          simplevars(),
+          cssnano(),
+        ],
       }),<% } %>
     ]
   }
