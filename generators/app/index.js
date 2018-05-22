@@ -66,6 +66,12 @@ module.exports = class extends Generator {
         filter: x => normalizeUrl(x)
       },
       {
+        name: 'babel',
+        message: 'Will you transpile with babel?',
+        type: 'confirm',
+        default: false
+      },
+      {
         name: 'coverage',
         message: 'Do you need code coverage?',
         type: 'confirm',
@@ -95,6 +101,7 @@ module.exports = class extends Generator {
       const repoName = getRepoName(props.moduleName);
 
       const tpl = {
+        babel: props.babel,
         moduleName: props.moduleName,
         moduleDescription: props.moduleDescription,
         camelModuleName: s.camelize(repoName),

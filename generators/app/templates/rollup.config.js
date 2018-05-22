@@ -1,5 +1,6 @@
 import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
+import commonjs from 'rollup-plugin-commonjs';<% if (babel) { %>
+import babel from 'rollup-plugin-babel';<% } %>
 import pkg from './package.json';
 
 export default [
@@ -24,7 +25,12 @@ export default [
     ],
     plugins: [
       resolve(),
-      commonjs()
+      commonjs(),<% if (babel) { %>
+      babel({
+        exclude: 'node_modules/**',
+        presets: [ [ 'env', { modules: false } ] ],
+        plugins: [ 'external-helpers' ]
+      }),<% } %>
     ]
   }
 ];
