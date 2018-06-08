@@ -29,18 +29,19 @@ export default [
     ],
     plugins: [
       resolve(),
-      commonjs(),<% if (babel) { %>
-      babel({
-        exclude: 'node_modules/**',
-        presets: [ [ 'env', { modules: false } ] ],
-        plugins: [ 'external-helpers' ]
-      }),<% } %><% if (postcss) { %>
+      commonjs(),
+      <% if (postcss) { %>
       postcss({
         plugins: [
           nested(),
           simplevars(),
           cssnano(),
         ],
+      }),<% } %><% if (babel) { %>
+      babel({
+        exclude: 'node_modules/**',
+        presets: [ [ 'env', { modules: false } ] ],
+        plugins: [ 'external-helpers' ]
       }),<% } %>
     ]
   }

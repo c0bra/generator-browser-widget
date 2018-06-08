@@ -1,5 +1,10 @@
-foo {
+widget {
+  font-size: 40px;
+  padding: 10px 20px;
+  border-radius: 4px;
+  box-shadow: 0 15px 50px 5px rgba(0,0,0,0.2);
+
   &:hover {
-    outline: 1px solid blue;
+    cursor: pointer;
   }
 }
