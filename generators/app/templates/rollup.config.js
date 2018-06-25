@@ -42,7 +42,8 @@ export default [
         exclude: 'node_modules/**',
         presets: [ [ 'env', { modules: false } ] ],
         plugins: [ 'external-helpers' ]
-      }),<% } %>
+      }),<% } %><% if (typescript) { %>
+      typescript(),<% } %>
     ]
   }
 ];

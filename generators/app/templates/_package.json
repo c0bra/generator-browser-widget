@@ -40,7 +40,8 @@
     "rollup-plugin-postcss": "^1.6.1",
     "postcss-nested": "^3.0.0",
     "postcss-simple-vars": "^4.1.0",
-    "cssnano": "^3.10.0",<% } %>
+    "cssnano": "^3.10.0",<% } %><% if (typescript) { %>
+    "typescript": "^2.8.3",<% } %>
     "wait-on": "^2.1.0"
   }<% if (coverage) { %>,
   "jest": {
