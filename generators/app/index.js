@@ -72,6 +72,12 @@ module.exports = class extends Generator {
         default: false
       },
       {
+        name: 'typescript',
+        message: 'Will you use TypeScript?',
+        type: 'confirm',
+        default: false
+      },
+      {
         name: 'postcss',
         message: 'Do you want to use PostCSS?',
         type: 'confirm',
@@ -108,6 +114,7 @@ module.exports = class extends Generator {
 
       const tpl = {
         babel: props.babel,
+        typescript: props.typescript,
         postcss: props.postcss,
         moduleName: props.moduleName,
         moduleDescription: props.moduleDescription,
@@ -139,6 +146,12 @@ module.exports = class extends Generator {
       mv('_package.json', 'package.json');
 
       if (!props.postcss) this.fs.delete('main.css');
+      if (props.typescript) this.fs.delete('index.js');
+      else {
+        this.fs.delete('index.ts');
+        this.fs.delete('tsconfig.json');
+        this.fs.delete('tslint.json');
+      }
     });
   }
 
@@ -149,8 +162,8 @@ module.exports = class extends Generator {
   install() {
     this.installDependencies({
       bower: false,
-      npm: false,
-      yarn: true
+      npm: true,
+      yarn: false
     });
   }
 

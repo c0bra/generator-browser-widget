@@ -1,6 +1,7 @@
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';<% if (babel) { %>
-import babel from 'rollup-plugin-babel';<% } %><% if (postcss) { %>
+import babel from 'rollup-plugin-babel';<% } %><% if (typescript) { %>
+import typescript from 'rollup-plugin-typescript2';<% } %><% if (postcss) { %>
 import postcss from 'rollup-plugin-postcss';
 import cssnano from 'cssnano';
 import nested from 'postcss-nested';
@@ -10,7 +11,7 @@ import pkg from './package.json';
 export default [
   // browser-friendly UMD build
   {
-    input: './index.js',
+    <% if (typescript) { %>input: './index.ts',<% } else { %>input: './index.js',<% } %>
     output: [
       {
         name: '<%= camelModuleName %>',
@@ -42,7 +43,8 @@ export default [
         exclude: 'node_modules/**',
         presets: [ [ 'env', { modules: false } ] ],
         plugins: [ 'external-helpers' ]
-      }),<% } %>
+      }),<% } %><% if (typescript) { %>
+      typescript(),<% } %>
     ]
   }
 ];
