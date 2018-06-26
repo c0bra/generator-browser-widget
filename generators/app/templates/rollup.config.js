@@ -1,6 +1,7 @@
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';<% if (babel) { %>
-import babel from 'rollup-plugin-babel';<% } %><% if (postcss) { %>
+import babel from 'rollup-plugin-babel';<% } %><% if (typescript) { %>
+import typescript from 'rollup-plugin-typescript2';<% } %><% if (postcss) { %>
 import postcss from 'rollup-plugin-postcss';
 import cssnano from 'cssnano';
 import nested from 'postcss-nested';
