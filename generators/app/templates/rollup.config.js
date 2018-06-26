@@ -11,7 +11,7 @@ import pkg from './package.json';
 export default [
   // browser-friendly UMD build
   {
-    input: './index.js',
+    <% if (typescript) { %>input: './index.ts',<% } else { %>input: './index.js',<% } %>
     output: [
       {
         name: '<%= camelModuleName %>',
