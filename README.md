@@ -14,6 +14,7 @@ Inspiration from Sindre's [generator-nm](https://github.com/sindresorhus/generat
 * E2E test in the browser with [cypress.io](https://www.cypress.io/) (Useful for testing widgets and visual components, but JS code can be tested too)
 * Publish code coverage to [coveralls.io](https://coveralls.io)
 * Local development server with live-reload using [live-server](https://www.npmjs.com/package/live-server)
+* Create a static [gh-pages](https://pages.github.com/) site with [VuePress](https://vuepress.vuejs.org/)
 
 # Install
 

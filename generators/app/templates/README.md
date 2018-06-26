@@ -38,6 +38,20 @@ Default: `false`
 
 Lorem ipsum.
 
+## Development
+
+### Docs
+
+Run the docs development server
+
+    npm run docs:dev
+
+Open http://localhost:8080
+
+Deploy the docs to github pages:
+
+    ./docs/docs.sh
+
 ## License
 
 MIT © [<%= name %>](<%= website %>)

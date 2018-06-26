@@ -21,7 +21,9 @@
     "dev": "PORT=$(get-port); concurrently \"npm run build -- --watch\" \"wait-on tcp:$PORT && cypress open --config baseUrl=http://localhost:$PORT\" \"npm run serve -- --port=$PORT\"",
     "e2e": "PORT=$(get-port); npm run build && concurrently -k -s first \"cypress run --config baseUrl=http://localhost:$PORT\" \"npm run serve -- --port=$PORT\"",
     "serve": "live-server",
-    "test": "npm run build && jest"
+    "test": "npm run build && jest"<% if (vuepress) { %>,
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"<% } %>
   },
   "devDependencies": {<% if (babel) { %>
     "babel-core": "^6.26.3",
@@ -42,7 +44,8 @@
     "postcss-simple-vars": "^4.1.0",
     "cssnano": "^3.10.0",<% } %><% if (typescript) { %>
     "typescript": "^2.8.3",
-    "rollup-plugin-typescript2": "0.15.1",<% } %>
+    "rollup-plugin-typescript2": "0.15.1",<% } %><% if (vuepress) { %>
+    "vuepress": "^0.10.2",<% } %>
     "wait-on": "^2.1.0"
   }<% if (coverage) { %>,
   "jest": {

@@ -100,6 +100,12 @@ module.exports = class extends Generator {
         when: x =>
           (x.coverage || this.options.coverage) &&
           this.options.coveralls === undefined
+      },
+      {
+        name: 'vuepress',
+        message: 'Do you want to generate a static github pages site with VuePress?',
+        type: 'confirm',
+        default: false
       }
     ]).then((props) => {
       const or = (option, prop) =>
@@ -126,7 +132,8 @@ module.exports = class extends Generator {
         website: props.website,
         humanizedWebsite: humanizeUrl(props.website),
         coverage,
-        coveralls
+        coveralls,
+        vuepress: props.vuepress
       };
 
       const mv = (from, to) => {
@@ -149,7 +156,6 @@ module.exports = class extends Generator {
       if (props.typescript) this.fs.delete('index.js');
       else {
         this.fs.delete('index.ts');
-        this.fs.delete('tsconfig.json');
         this.fs.delete('tslint.json');
       }
     });
