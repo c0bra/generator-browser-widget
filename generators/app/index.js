@@ -78,6 +78,12 @@ module.exports = class extends Generator {
         default: false
       },
       {
+        name: 'svelte',
+        message: 'Will you build components with Svelte.js?',
+        type: 'confirm',
+        default: false,
+      },
+      {
         name: 'postcss',
         message: 'Do you want to use PostCSS?',
         type: 'confirm',
@@ -121,6 +127,7 @@ module.exports = class extends Generator {
       const tpl = {
         babel: props.babel,
         typescript: props.typescript,
+        svelte: props.svelte,
         postcss: props.postcss,
         moduleName: props.moduleName,
         moduleDescription: props.moduleDescription,
@@ -158,6 +165,8 @@ module.exports = class extends Generator {
         this.fs.delete('index.ts');
         this.fs.delete('tslint.json');
       }
+      if (!props.vuepress) this.fs.delete('docs');
+      if (!props.svelte) this.fs.delete('components');
     });
   }
 
