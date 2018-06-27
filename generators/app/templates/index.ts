@@ -1,4 +1,5 @@
-<% if (postcss) { %>import './main.css';<% } %>
+<% if (postcss) { %>import './main.css';<% } %><% if (svelte) { %>
+import Hello from './components/Hello.svelte';<% } %>
 
 export default function <%= camelModuleName %>(input, defaultPrefix = 'Prefixed') {
   if (typeof input !== 'string') {
@@ -9,3 +10,11 @@ export default function <%= camelModuleName %>(input, defaultPrefix = 'Prefixed'
 
   return `${prefix}: s${input}`;
 };
+
+<% if (svelte) { %>
+document.addEventListener('DOMContentLoaded', () => {
+  const Hello = new Hello({
+    target: document.querySelector('body'),
+  });
+});
+<% } %>

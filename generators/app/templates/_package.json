@@ -32,19 +32,22 @@
     "concurrently": "^3.5.1",<% if (coveralls) { %>
     "coveralls": "^3.0.0",<% } %>
     "cypress": "^2.1.0",
-    "get-port-cli": "1.1.0",
+    "get-port-cli": "^1.1.0",
     "jest": "22.4.3",
     "live-server": "^1.2.0",
     "rollup": "^0.57.1",<% if (babel) { %>
-    "rollup-plugin-babel": "3.0.4",<% } %>
+    "rollup-plugin-babel": "^3.0.4",<% } %>
     "rollup-plugin-commonjs": "^9.1.0",
     "rollup-plugin-node-resolve": "^3.3.0",<% if (postcss) { %>
-    "rollup-plugin-postcss": "^1.6.1",
+    "rollup-plugin-postcss": "^1.6.1",<% } %><% if (svelte) { %>
+    "rollup-plugin-svelte": "^4.1.0",
+    "svelte": "^2.8.1",
+    "less": "^3.0.4",<% } %><% if (postcss) { %>
     "postcss-nested": "^3.0.0",
     "postcss-simple-vars": "^4.1.0",
     "cssnano": "^3.10.0",<% } %><% if (typescript) { %>
     "typescript": "^2.8.3",
-    "rollup-plugin-typescript2": "0.15.1",<% } %><% if (vuepress) { %>
+    "rollup-plugin-typescript2": "^0.15.1",<% } %><% if (vuepress) { %>
     "vuepress": "^0.10.2",<% } %>
     "wait-on": "^2.1.0"
   }<% if (coverage) { %>,
